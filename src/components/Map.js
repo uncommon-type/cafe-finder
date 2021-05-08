@@ -11,7 +11,11 @@ const Map = ({ data }) => {
     <section className="map-group flow radius">
       <div className="map-group__inner">
         <div className="map-container">
-          <ReactMapGL mapboxApiAccessToken="pk.eyJ1IjoibmFkaWEyMDIxIiwiYSI6ImNrbmZ2bXVxYTJqanMycXRhOTcxMjRxNzQifQ.PqkggxtKPWi9hUSgZ-05Ww">
+          <ReactMapGL
+            width="100%"
+            height="100%"
+            mapboxApiAccessToken="pk.eyJ1IjoibmFkaWEyMDIxIiwiYSI6ImNrbmZ2bXVxYTJqanMycXRhOTcxMjRxNzQifQ.PqkggxtKPWi9hUSgZ-05Ww"
+          >
             {/* <Dialog /> */}
           </ReactMapGL>
         </div>
