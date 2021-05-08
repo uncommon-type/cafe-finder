@@ -3,9 +3,10 @@ import Context from "../Context";
 import HeartIcon from "./HeartIcon";
 
 const RemoveButton = ({ id }) => {
+  const { onRemove } = useContext(Context);
   return (
     <div className="heart">
-      <button className="heart__button">
+      <button onClick={() => onRemove(id)} className="heart__button">
         <HeartIcon />
       </button>
     </div>
