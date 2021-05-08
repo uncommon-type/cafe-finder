@@ -6,7 +6,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import PinIcon from "./PinIcon";
 import Dialog from "./Dialog";
 
-const Map = ({ data }) => {
+const Map = ({ data, pinToHover }) => {
   const [viewport, setViewport] = useState(null);
 
   useEffect(() => {
@@ -44,8 +44,12 @@ const Map = ({ data }) => {
                     >
                       <PinIcon
                         className="map__marker"
-                        color="#ff269e"
-                        size="40"
+                        color={
+                          f.properties.id === pinToHover
+                            ? "rgb(0,	47,	60, 0.6)"
+                            : "#ff269e"
+                        }
+                        size={f.properties.id === pinToHover ? 50 : 40}
                       />
                     </Marker>
                   );
