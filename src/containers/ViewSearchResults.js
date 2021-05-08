@@ -17,6 +17,10 @@ const ViewSearchResults = ({ initialSearch }) => {
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState(null);
 
+  const isLoading = status === "loading";
+  const isSuccess = status === "success";
+  const isError = status === "error";
+
   return (
     <>
       <Nav initialSearch={initialSearch} />
