@@ -5,6 +5,9 @@ import ShortlistButton from "./ShortlistButton";
 import Context from "../Context";
 
 const Card = ({ feature, handleHover }) => {
+  const { addToShortlist, removeFromShortlist, shortlist } = useContext(
+    Context
+  );
   const { id, name, rating, location, url } = feature.properties;
   return (
     <li
