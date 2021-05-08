@@ -9,7 +9,9 @@ const CardList = ({ data, setOffset }) => {
     <section className="card-group flow bg-primary color-light">
       <div className="card-group__inner">
         <ul id="card-list">
-          <Card />
+          {data.features.map((feature) => (
+            <Card key={feature.properties.id} feature={feature} />
+          ))}
         </ul>
         {/* <Dialog /> */}
         <Pagination
