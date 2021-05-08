@@ -34,9 +34,21 @@ const Card = ({ feature, handleHover }) => {
         <div className="card__footer">
           <small>Rating {rating}</small>
           <div className="card__footer__heart-btn">
-            <button className="heart__button">
-              <HeartIcon />
-            </button>
+            {isInShortList(id) ? (
+              <button
+                onClick={() => removeFromShortlist(id)}
+                className="heart__button selected"
+              >
+                <HeartIcon />
+              </button>
+            ) : (
+              <ShortlistButton
+                onClick={() => {
+                  addToShortlist(id, name, rating, location, url);
+                }}
+                id={id}
+              />
+            )}
           </div>
         </div>
       </div>
