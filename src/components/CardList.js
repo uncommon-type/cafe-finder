@@ -10,7 +10,11 @@ const CardList = ({ data, handleHover, setOffset }) => {
       <div className="card-group__inner">
         <ul id="card-list">
           {data.features.map((feature) => (
-            <Card key={feature.properties.id} feature={feature} />
+            <Card
+              key={feature.properties.id}
+              feature={feature}
+              handleHover={handleHover}
+            />
           ))}
         </ul>
         {/* <Dialog /> */}
