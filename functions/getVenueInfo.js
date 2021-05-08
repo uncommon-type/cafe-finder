@@ -2,7 +2,9 @@ require("dotenv").config({ path: `${__dirname}/.env` });
 
 const fetch = require("node-fetch");
 
-exports.handler = async () => {
+exports.handler = async ({ queryStringParameters }) => {
+  const { id } = queryStringParameters;
+
   return {
     statusCode: 200,
     body: "",
