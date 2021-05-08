@@ -13,6 +13,7 @@ const SearchBar = ({ initialSearch }) => {
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
+    updateURL(event.target.elements.query.value);
   };
 
   return (
