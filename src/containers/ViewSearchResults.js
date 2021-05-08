@@ -77,7 +77,7 @@ const ViewSearchResults = ({ initialSearch }) => {
   return isSuccess ? (
     data && data.features ? (
       <>
-        <Nav initialSearch={initialSearch} />
+        <Nav />
         <div className="app__body splitter gap-top-600">
           <CardList data={data} setOffset={setOffset} />
           <Map data={data} />
