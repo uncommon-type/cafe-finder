@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 
+import Context from "../Context";
 import ShortlistDialog from "./ShortlistDialog";
 
 const Nav = () => {
