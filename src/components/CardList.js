@@ -12,7 +12,11 @@ const CardList = ({ data }) => {
           <Card />
         </ul>
         {/* <Dialog /> */}
-        <Pagination />
+        <Pagination
+          total={data.total}
+          limit={data.limit}
+          offset={data.offset}
+        />
       </div>
     </section>
   );
