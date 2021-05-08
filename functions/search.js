@@ -18,8 +18,13 @@ const fetchFromYelp = async (location) => {
 exports.handler = async ({ queryStringParameters }) => {
   const { location } = queryStringParameters;
 
-  return {
-    statusCode: 200,
-    body: "",
-  };
+  try {
+    let data = await fetchFromYelp(location);
+    return {
+      statusCode: 200,
+      body: JSON.stringify(data),
+    };
+  } catch (error) {
+    console.log(error);
+  }
 };
