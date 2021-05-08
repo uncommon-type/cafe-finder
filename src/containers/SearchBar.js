@@ -1,6 +1,10 @@
 import React from "react";
 
 const SearchBar = ({ initialSearch }) => {
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <header>
       <div className="site-head">
