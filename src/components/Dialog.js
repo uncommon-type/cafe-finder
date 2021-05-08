@@ -44,48 +44,56 @@ const Dialog = ({ venueDetails, onClick }) => {
     return <ErrorMessage error={error} />;
   }
 
-  return (
-    <div className="shortlist-dialog">
-      <div className="shortlist-dialog__inner">
-        <button className="shortlist-dialog__button">
-          <CloseIcon />
-        </button>
-        <header className="dialog__header">
-          <h1>Monmouth Coffee</h1>
-          <strong className="dialog__header__strong">Rating 4.5</strong>
-        </header>
-        <section className="dialog__img">
-          <div className="dialog__img__inner">
-            <div className="img-container">
-              <img src="" alt="" />
-            </div>
+  return isSuccess ? (
+    venueInfo !== null ? (
+      <div className="shortlist-dialog">
+        <div className="shortlist-dialog__inner">
+          <button onClick={onClick} className="shortlist-dialog__button">
+            <CloseIcon />
+          </button>
+          <header className="dialog__header">
+            <h1>{venueInfo.name}</h1>
+            <strong className="dialog__header__strong">
+              Rating {venueInfo.rating}
+            </strong>
+          </header>
+          <section className="dialog__img">
+            <div className="dialog__img__inner">
+              <div className="img-container">
+                <img src={venueInfo.image_url} alt={venueInfo.name} />
+              </div>
 
-            <figcaption className="img-caption">
-              <span className="img-caption__where font-sans weight-bold">
-                Where
-              </span>
-              <span className="img-caption__location">London W1H 7JN</span>
-            </figcaption>
-          </div>
-        </section>
-        <section className="dialog__body">
-          <a href="" className="visit-btn">
-            Visit website
-          </a>
-          <div className="container">
-            <div className="container__content">
-              <h3 className="">Contact</h3>
-              <p>+442075637222</p>
+              <figcaption className="img-caption">
+                <span className="img-caption__where font-sans weight-bold">
+                  Where
+                </span>
+                <span className="img-caption__location">
+                  {venueInfo.location.city} {""} {venueInfo.location.zip_code}
+                </span>
+              </figcaption>
             </div>
-            <div className="container__content">
-              <h3> Price</h3>
-              <p>$$</p>
+          </section>
+          <section className="dialog__body">
+            <a href={venueInfo.url} className="visit-btn">
+              Visit website
+            </a>
+            <div className="container">
+              <div className="container__content">
+                <h3 className="">Contact</h3>
+                <p> {venueInfo.phone}</p>
+              </div>
+              <div className="container__content">
+                <h3> Price</h3>
+                <p>{venueDetails.properties.price}</p>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
-    </div>
-  );
+    ) : (
+      <ErrorMessage error={error} />
+    )
+  ) : null;
 };
 
 export default Dialog;
