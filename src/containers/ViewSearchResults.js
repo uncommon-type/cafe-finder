@@ -22,6 +22,7 @@ const ViewSearchResults = ({ initialSearch }) => {
   const isError = status === "error";
 
   const history = useHistory();
+  const location = useLocation();
 
   useEffect(() => {
     if (!searchTerm) {
