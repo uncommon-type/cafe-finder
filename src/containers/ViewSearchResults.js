@@ -14,6 +14,7 @@ import Map from "../components/Map";
 
 const ViewSearchResults = ({ initialSearch }) => {
   const [data, setData] = useState(null);
+  const [status, setStatus] = useState("idle");
   return (
     <>
       <Nav initialSearch={initialSearch} />
