@@ -89,7 +89,7 @@ const ViewSearchResults = ({ initialSearch }) => {
             setOffset={setOffset}
             handleHover={handleHover}
           />
-          <Map data={data} />
+          <Map data={data} pinToHover={currentlyHovered} />
         </div>
       </>
     ) : (
