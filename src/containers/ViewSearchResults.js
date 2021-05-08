@@ -13,6 +13,7 @@ import Nav from "../components/Nav";
 import Map from "../components/Map";
 
 const ViewSearchResults = ({ initialSearch }) => {
+  const [data, setData] = useState(null);
   return (
     <>
       <Nav initialSearch={initialSearch} />
