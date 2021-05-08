@@ -16,6 +16,10 @@ const Map = ({ data, pinToHover }) => {
     }
   }, [data]);
 
+  const handlePinClick = async (venueDetails) => {
+    setVenueDetails(venueDetails);
+  };
+
   return (
     <section className="map-group flow radius">
       <div className="map-group__inner">
