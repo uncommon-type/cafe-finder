@@ -9,6 +9,14 @@ const Card = ({ feature, handleHover }) => {
     Context
   );
   const { id, name, rating, location, url } = feature.properties;
+
+  const isInShortList = useCallback(
+    (id) => {
+      return !!shortlist.find((entry) => entry.id === id);
+    },
+    [shortlist]
+  );
+
   return (
     <li
       onMouseEnter={handleHover ? () => handleHover(id) : null}
