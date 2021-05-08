@@ -25,7 +25,9 @@ const Nav = () => {
           <button className="share-button">Share</button>
         </aside>
       </div>
-      {/* <ShortlistDialog /> */}
+      {shortlistOpen ? (
+        <ShortlistDialog closeShortlist={handleShortlistClose} />
+      ) : null}
     </>
   );
 };
