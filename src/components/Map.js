@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 
+import ReactMapGL, { NavigationControl, Marker } from "react-map-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
+
 import PinIcon from "./PinIcon";
 import Dialog from "./Dialog";
 
