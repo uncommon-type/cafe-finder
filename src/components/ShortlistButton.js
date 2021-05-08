@@ -2,7 +2,7 @@ import React from "react";
 
 import HeartIcon from "./HeartIcon";
 
-const ShortlistButton = () => {
+const ShortlistButton = ({ onClick, id }) => {
   return (
     <div className="heart">
       <button className="heart__button">
