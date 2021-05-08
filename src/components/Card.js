@@ -3,6 +3,7 @@ import React from "react";
 import ShortlistButton from "./ShortlistButton";
 
 const Card = ({ feature, handleHover }) => {
+  const { id, name, rating, location, url } = feature.properties;
   return (
     <li className="card">
       <div className="card__body">
