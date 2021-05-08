@@ -64,7 +64,9 @@ const Map = ({ data, pinToHover }) => {
                   );
                 })
               : null}
-            {/* <Dialog /> */}
+            {venueDetails && (
+              <Dialog onClick={handleClose} venueDetails={venueDetails} />
+            )}
           </ReactMapGL>
         </div>
       </div>
