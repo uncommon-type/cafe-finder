@@ -30,6 +30,10 @@ const ViewSearchResults = ({ initialSearch }) => {
 
   const offset = (parseInt(page) - 1) * 5;
 
+  const setOffset = (value) => {
+    history.push(`/search/?q=${searchTerm}&p=${value / 5 + 1}`);
+  };
+
   useEffect(() => {
     if (!searchTerm) {
       return;
