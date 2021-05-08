@@ -52,6 +52,9 @@ const Map = ({ data, pinToHover }) => {
                       offsetTop={-38}
                     >
                       <PinIcon
+                        onClick={() => {
+                          handlePinClick(f);
+                        }}
                         className="map__marker"
                         color={
                           f.properties.id === pinToHover
