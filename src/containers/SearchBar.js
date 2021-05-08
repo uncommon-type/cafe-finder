@@ -5,6 +5,12 @@ import { useHistory } from "react-router-dom";
 const SearchBar = ({ initialSearch }) => {
   const history = useHistory();
 
+  const updateURL = (query) => {
+    if (query) {
+      history.push(`/search/?q=${query}`);
+    }
+  };
+
   const handleSearchSubmit = (event) => {
     event.preventDefault();
   };
