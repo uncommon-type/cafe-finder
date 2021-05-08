@@ -20,6 +20,10 @@ const Map = ({ data, pinToHover }) => {
     setVenueDetails(venueDetails);
   };
 
+  const handleClose = () => {
+    setVenueDetails(null);
+  };
+
   return (
     <section className="map-group flow radius">
       <div className="map-group__inner">
