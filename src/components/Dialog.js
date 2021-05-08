@@ -6,6 +6,10 @@ import ErrorMessage from "./ErrorMessage";
 
 const Dialog = ({ venueDetails, onClick }) => {
   const id = venueDetails.properties.id;
+  const [venueInfo, setVenueInfo] = useState(null);
+  const [status, setStatus] = useState("idle");
+  const [error, setError] = useState(null);
+
   return (
     <div className="shortlist-dialog">
       <div className="shortlist-dialog__inner">
