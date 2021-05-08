@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import CloseIcon from "./CloseIcon";
 import Card from "./Card";
+import Context from "../Context";
 
 const ShortlistDialog = () => {
   return (
