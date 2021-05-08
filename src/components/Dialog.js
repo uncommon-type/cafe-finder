@@ -5,6 +5,7 @@ import Spinner from "./Spinner";
 import ErrorMessage from "./ErrorMessage";
 
 const Dialog = ({ venueDetails, onClick }) => {
+  const id = venueDetails.properties.id;
   return (
     <div className="shortlist-dialog">
       <div className="shortlist-dialog__inner">
