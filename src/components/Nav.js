@@ -4,6 +4,9 @@ import Context from "../Context";
 import ShortlistDialog from "./ShortlistDialog";
 
 const Nav = () => {
+  const [shortlistOpen, setShortlistOpen] = useState(false);
+  const { shortlist } = useContext(Context);
+
   return (
     <>
       <div className="app__nav splitter gap-top-700">
