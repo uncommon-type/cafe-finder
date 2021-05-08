@@ -4,7 +4,7 @@ import CloseIcon from "./CloseIcon";
 import Spinner from "./Spinner";
 import ErrorMessage from "./ErrorMessage";
 
-const Dialog = () => {
+const Dialog = ({ venueDetails, onClick }) => {
   return (
     <div className="shortlist-dialog">
       <div className="shortlist-dialog__inner">
