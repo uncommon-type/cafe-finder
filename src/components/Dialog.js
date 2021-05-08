@@ -14,6 +14,28 @@ const Dialog = ({ venueDetails, onClick }) => {
   const isSuccess = status === "success";
   const isError = status === "error";
 
+  useEffect(() => {
+    if (!id) {
+      return;
+    }
+
+    const fetchVenueDetails = async (id) => {
+      setStatus("loading");
+      try {
+        const res = await fetch(`/.netlify/functions/getVenueInfo?id=${id}`);
+        const data = await res.json();
+        setVenueInfo(data);
+        setStatus("success");
+      } catch (error) {
+        console.error(error);
+        setError(error);
+        setStatus("error");
+      }
+    };
+
+    fetchVenueDetails(id);
+  }, [id, setVenueInfo]);
+
   return (
     <div className="shortlist-dialog">
       <div className="shortlist-dialog__inner">
