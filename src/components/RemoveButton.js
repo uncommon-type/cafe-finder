@@ -1,7 +1,7 @@
 import React from "react";
 import HeartIcon from "./HeartIcon";
 
-const RemoveButton = () => {
+const RemoveButton = ({ id }) => {
   return (
     <div className="heart">
       <button className="heart__button">
