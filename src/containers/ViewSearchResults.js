@@ -61,14 +61,12 @@ const ViewSearchResults = ({ initialSearch }) => {
     return <ErrorMessage error={error} />;
   }
 
-   return isSuccess ? (
+  return isSuccess ? (
     data && data.features ? (
       <>
         <Nav initialSearch={initialSearch} />
         <div className="app__body splitter gap-top-600">
-          <CardList
-            data={data}   
-          />
+          <CardList data={data} />
           <Map data={data} />
         </div>
       </>
@@ -76,8 +74,6 @@ const ViewSearchResults = ({ initialSearch }) => {
       <ErrorMessage error={error} />
     )
   ) : null;
-};
-
 };
 
 export default ViewSearchResults;
