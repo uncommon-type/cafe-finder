@@ -5,6 +5,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 import SearchBar from "./containers/SearchBar";
 import ViewSearchResults from "./containers/ViewSearchResults";
 
+import Context from "./Context";
+
 const Root = () => {
   const defaultShortlist = localStorage.getItem("shortlist")
     ? JSON.parse(localStorage.getItem("shortlist"))
