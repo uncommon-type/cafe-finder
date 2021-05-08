@@ -28,6 +28,8 @@ const ViewSearchResults = ({ initialSearch }) => {
     location.search
   );
 
+  const offset = (parseInt(page) - 1) * 5;
+
   useEffect(() => {
     if (!searchTerm) {
       return;
