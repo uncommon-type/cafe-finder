@@ -8,6 +8,7 @@ import Dialog from "./Dialog";
 
 const Map = ({ data, pinToHover }) => {
   const [viewport, setViewport] = useState(null);
+  const [venueDetails, setVenueDetails] = useState(null);
 
   useEffect(() => {
     if (data && data.region) {
