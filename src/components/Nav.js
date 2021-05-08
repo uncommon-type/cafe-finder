@@ -7,6 +7,14 @@ const Nav = () => {
   const [shortlistOpen, setShortlistOpen] = useState(false);
   const { shortlist } = useContext(Context);
 
+  const handleShortlistOpen = () => {
+    setShortlistOpen(true);
+  };
+
+  const handleShortlistClose = () => {
+    setShortlistOpen(false);
+  };
+
   return (
     <>
       <div className="app__nav splitter gap-top-700">
