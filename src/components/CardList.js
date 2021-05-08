@@ -4,7 +4,7 @@ import Pagination from "./Pagination";
 import Card from "./Card";
 import Dialog from "./Dialog";
 
-const CardList = ({ data, setOffset }) => {
+const CardList = ({ data, handleHover, setOffset }) => {
   return (
     <section className="card-group flow bg-primary color-light">
       <div className="card-group__inner">
