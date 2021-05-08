@@ -20,6 +20,11 @@ const Map = ({ data }) => {
             onViewportChange={(newViewport) => setViewport(newViewport)}
             {...viewport}
           >
+            <div>
+              <NavigationControl
+                onViewportChange={(newViewport) => setViewport(newViewport)}
+              />
+            </div>
             {/* <Dialog /> */}
           </ReactMapGL>
         </div>
