@@ -16,6 +16,7 @@ const ViewSearchResults = ({ initialSearch }) => {
   const [data, setData] = useState(null);
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState(null);
+  const [currentlyHovered, setCurrentlyHovered] = useState(null);
 
   const isLoading = status === "loading";
   const isSuccess = status === "success";
@@ -65,6 +66,10 @@ const ViewSearchResults = ({ initialSearch }) => {
     };
     searchVenues(searchTerm, offset);
   }, [searchTerm, offset, error]);
+
+  const handleHover = (id) => {
+    setCurrentlyHovered(id);
+  };
 
   if (isLoading) {
     return <Spinner />;
