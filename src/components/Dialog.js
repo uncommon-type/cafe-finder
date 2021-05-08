@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import CloseIcon from "./CloseIcon";
 import Spinner from "./Spinner";
