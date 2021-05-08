@@ -20,6 +20,10 @@ const Root = () => {
     setShortlist([...shortlist, { id, name, rating, location, url }]);
   };
 
+  const removeFromShortlist = (id) => {
+    setShortlist(shortlist.filter((venue) => venue.id !== id));
+  };
+
   return (
     <Router>
       <SearchBar initialSearch="london" />
