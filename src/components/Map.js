@@ -17,6 +17,8 @@ const Map = ({ data }) => {
             height="100%"
             mapStyle="mapbox://styles/mapbox/light-v9"
             mapboxApiAccessToken="pk.eyJ1IjoibmFkaWEyMDIxIiwiYSI6ImNrbmZ2bXVxYTJqanMycXRhOTcxMjRxNzQifQ.PqkggxtKPWi9hUSgZ-05Ww"
+            onViewportChange={(newViewport) => setViewport(newViewport)}
+            {...viewport}
           >
             {/* <Dialog /> */}
           </ReactMapGL>
