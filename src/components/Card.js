@@ -2,6 +2,7 @@ import React from "react";
 
 import HeartIcon from "./HeartIcon";
 import ShortlistButton from "./ShortlistButton";
+import Context from "../Context";
 
 const Card = ({ feature, handleHover }) => {
   const { id, name, rating, location, url } = feature.properties;
