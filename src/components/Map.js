@@ -14,6 +14,7 @@ const Map = ({ data }) => {
           <ReactMapGL
             width="100%"
             height="100%"
+            mapStyle="mapbox://styles/mapbox/light-v9"
             mapboxApiAccessToken="pk.eyJ1IjoibmFkaWEyMDIxIiwiYSI6ImNrbmZ2bXVxYTJqanMycXRhOTcxMjRxNzQifQ.PqkggxtKPWi9hUSgZ-05Ww"
           >
             {/* <Dialog /> */}
