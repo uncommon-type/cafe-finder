@@ -53,6 +53,10 @@ const ViewSearchResults = ({ initialSearch }) => {
     searchVenues(searchTerm);
   }, [searchTerm]);
 
+  if (isLoading) {
+    return <Spinner />;
+  }
+
   return (
     <>
       <Nav initialSearch={initialSearch} />
