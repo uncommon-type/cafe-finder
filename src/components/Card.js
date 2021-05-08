@@ -1,5 +1,6 @@
 import React from "react";
 
+import HeartIcon from "./HeartIcon";
 import ShortlistButton from "./ShortlistButton";
 
 const Card = ({ feature, handleHover }) => {
