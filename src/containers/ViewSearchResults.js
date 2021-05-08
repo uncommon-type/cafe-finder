@@ -21,6 +21,8 @@ const ViewSearchResults = ({ initialSearch }) => {
   const isSuccess = status === "success";
   const isError = status === "error";
 
+  const history = useHistory();
+
   useEffect(() => {
     if (!searchTerm) {
       return;
