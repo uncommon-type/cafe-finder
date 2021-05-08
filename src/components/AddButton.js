@@ -7,7 +7,13 @@ const AddButton = ({ id, onAdd }) => {
   const { shortlist } = useContext(Context);
   return (
     <div className="heart">
-      <button className="heart__button">
+      <button
+        onClick={() => onAdd(id)}
+        className={clsx(
+          "heart__button",
+          shortlist.includes(id) && "heart__button-active"
+        )}
+      >
         <HeartIcon />
       </button>
     </div>
