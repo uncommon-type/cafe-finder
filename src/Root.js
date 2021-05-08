@@ -12,6 +12,10 @@ const Root = () => {
 
   const [shortlist, setShortlist] = useState(defaultShortlist);
 
+  useEffect(() => {
+    localStorage.setItem("shortlist", JSON.stringify(shortlist));
+  }, [shortlist]);
+
   return (
     <Router>
       <SearchBar initialSearch="london" />
