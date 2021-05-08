@@ -57,6 +57,9 @@ const ViewSearchResults = ({ initialSearch }) => {
     return <Spinner />;
   }
 
+  if (isError) {
+    return <ErrorMessage error={error} />;
+  }
   return (
     <>
       <Nav initialSearch={initialSearch} />
