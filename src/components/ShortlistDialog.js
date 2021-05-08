@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import CloseIcon from "./CloseIcon";
 import Card from "./Card";
