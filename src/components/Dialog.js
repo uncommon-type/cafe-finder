@@ -10,6 +10,10 @@ const Dialog = ({ venueDetails, onClick }) => {
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState(null);
 
+  const isLoading = status === "loading";
+  const isSuccess = status === "success";
+  const isError = status === "error";
+
   return (
     <div className="shortlist-dialog">
       <div className="shortlist-dialog__inner">
