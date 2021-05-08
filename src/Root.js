@@ -6,6 +6,12 @@ import SearchBar from "./containers/SearchBar";
 import ViewSearchResults from "./containers/ViewSearchResults";
 
 const Root = () => {
+  const defaultShortlist = localStorage.getItem("shortlist")
+    ? JSON.parse(localStorage.getItem("shortlist"))
+    : [];
+
+  const [shortlist, setShortlist] = useState(defaultShortlist);
+
   return (
     <Router>
       <SearchBar initialSearch="london" />
