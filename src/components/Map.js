@@ -10,7 +10,11 @@ const Map = ({ data }) => {
   return (
     <section className="map-group flow radius">
       <div className="map-group__inner">
-        <div className="map-container">{/* <Dialog /> */}</div>
+        <div className="map-container">
+          <ReactMapGL mapboxApiAccessToken="pk.eyJ1IjoibmFkaWEyMDIxIiwiYSI6ImNrbmZ2bXVxYTJqanMycXRhOTcxMjRxNzQifQ.PqkggxtKPWi9hUSgZ-05Ww">
+            {/* <Dialog /> */}
+          </ReactMapGL>
+        </div>
       </div>
     </section>
   );
