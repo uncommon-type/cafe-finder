@@ -33,12 +33,12 @@ const ViewSearchResults = ({ initialSearch }) => {
 
     setStatus("loading");
 
-    const searchVenues = async (searchTerm) => {
+    const searchVenues = async (searchTerm, offset, limit = 5) => {
       try {
         let data = await client(
           `/.netlify/functions/search?location=${encodeURIComponent(
             searchTerm
-          )}`
+          )}&limit=${limit}&offset=${offset}`
         );
 
         if (data.error) {
@@ -46,7 +46,7 @@ const ViewSearchResults = ({ initialSearch }) => {
           setStatus("error");
         }
 
-        const geojsonifiedData = geojsonify(data);
+        const geojsonifiedData = geojsonify(data, limit, offset);
         setData(geojsonifiedData);
         setStatus("success");
       } catch (error) {
@@ -55,8 +55,8 @@ const ViewSearchResults = ({ initialSearch }) => {
         setStatus("error");
       }
     };
-    searchVenues(searchTerm);
-  }, [searchTerm]);
+    searchVenues(searchTerm, offset);
+  }, [searchTerm, offset, error]);
 
   if (isLoading) {
     return <Spinner />;
