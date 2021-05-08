@@ -3,6 +3,8 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 
 const SearchBar = ({ initialSearch }) => {
+  const history = useHistory();
+
   const handleSearchSubmit = (event) => {
     event.preventDefault();
   };
