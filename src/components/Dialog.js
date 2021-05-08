@@ -36,6 +36,10 @@ const Dialog = ({ venueDetails, onClick }) => {
     fetchVenueDetails(id);
   }, [id, setVenueInfo]);
 
+  if (isLoading) {
+    return <Spinner />;
+  }
+
   return (
     <div className="shortlist-dialog">
       <div className="shortlist-dialog__inner">
