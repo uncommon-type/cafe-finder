@@ -21,6 +21,38 @@ const ViewSearchResults = ({ initialSearch }) => {
   const isSuccess = status === "success";
   const isError = status === "error";
 
+  useEffect(() => {
+    if (!searchTerm) {
+      return;
+    }
+
+    setStatus("loading");
+
+    const searchVenues = async (searchTerm) => {
+      try {
+        let data = await client(
+          `/.netlify/functions/search?location=${encodeURIComponent(
+            searchTerm
+          )}`
+        );
+
+        if (data.error) {
+          setError(error);
+          setStatus("error");
+        }
+
+        const geojsonifiedData = geojsonify(data);
+        setData(geojsonifiedData);
+        setStatus("success");
+      } catch (error) {
+        console.log(error);
+        setError(error);
+        setStatus("error");
+      }
+    };
+    searchVenues(searchTerm);
+  }, [searchTerm]);
+
   return (
     <>
       <Nav initialSearch={initialSearch} />
