@@ -19,8 +19,14 @@ const Nav = () => {
     <>
       <div className="app__nav splitter gap-top-700">
         <aside>
-          <button className="shortlist-button">
-            <strong>See shortlist</strong>
+          <button onClick={handleShortlistOpen} className="shortlist-button">
+            {shortlist.length > 0 ? (
+              <>
+                <strong>See shortlist</strong> ({shortlist.length})
+              </>
+            ) : (
+              <>Shortlist is empty</>
+            )}
           </button>
           <button className="share-button">Share</button>
         </aside>
