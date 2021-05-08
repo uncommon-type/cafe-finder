@@ -24,7 +24,9 @@ const ViewSearchResults = ({ initialSearch }) => {
   const history = useHistory();
   const location = useLocation();
 
-  const { q: searchTerm = initialSearch } = parse(location.search);
+  const { q: searchTerm = initialSearch, p: page = "1" } = parse(
+    location.search
+  );
 
   useEffect(() => {
     if (!searchTerm) {
