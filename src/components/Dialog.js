@@ -40,6 +40,10 @@ const Dialog = ({ venueDetails, onClick }) => {
     return <Spinner />;
   }
 
+  if (isError) {
+    return <ErrorMessage error={error} />;
+  }
+
   return (
     <div className="shortlist-dialog">
       <div className="shortlist-dialog__inner">
