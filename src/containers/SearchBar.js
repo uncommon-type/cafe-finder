@@ -5,7 +5,7 @@ const SearchBar = ({ initialSearch }) => {
     <header>
       <div className="site-head">
         <div className="site-head__inner">
-          <form className="search-form">
+          <form className="search-form" onSubmit={handleSearchSubmit}>
             <label htmlFor="query" className="search-form__label">
               Search query
             </label>
