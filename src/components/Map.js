@@ -25,6 +25,25 @@ const Map = ({ data }) => {
                 onViewportChange={(newViewport) => setViewport(newViewport)}
               />
             </div>
+            {data && data.features.length !== 0
+              ? data.features.map((f) => {
+                  return (
+                    <Marker
+                      key={f.properties.id}
+                      latitude={f.geometry.coordinates[1]}
+                      longitude={f.geometry.coordinates[0]}
+                      offsetLeft={-19}
+                      offsetTop={-38}
+                    >
+                      <PinIcon
+                        className="map__marker"
+                        color="#ff269e"
+                        size="40"
+                      />
+                    </Marker>
+                  );
+                })
+              : null}
             {/* <Dialog /> */}
           </ReactMapGL>
         </div>
