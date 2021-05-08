@@ -16,6 +16,10 @@ const Root = () => {
     localStorage.setItem("shortlist", JSON.stringify(shortlist));
   }, [shortlist]);
 
+  const addToShortlist = (id, name, rating, location, url) => {
+    setShortlist([...shortlist, { id, name, rating, location, url }]);
+  };
+
   return (
     <Router>
       <SearchBar initialSearch="london" />
