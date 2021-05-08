@@ -4,7 +4,7 @@ import CloseIcon from "./CloseIcon";
 import Card from "./Card";
 import Context from "../Context";
 
-const ShortlistDialog = () => {
+const ShortlistDialog = ({ closeShortlist }) => {
   return (
     <div className="shortlist-dialog">
       <div className="shortlist-dialog__inner">
