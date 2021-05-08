@@ -84,7 +84,11 @@ const ViewSearchResults = ({ initialSearch }) => {
       <>
         <Nav />
         <div className="app__body splitter gap-top-600">
-          <CardList data={data} setOffset={setOffset} />
+          <CardList
+            data={data}
+            setOffset={setOffset}
+            handleHover={handleHover}
+          />
           <Map data={data} />
         </div>
       </>
