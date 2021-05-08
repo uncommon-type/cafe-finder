@@ -2,7 +2,7 @@ import React from "react";
 
 import ShortlistButton from "./ShortlistButton";
 
-const Card = ({ handleHover }) => {
+const Card = ({ feature, handleHover }) => {
   return (
     <li className="card">
       <div className="card__body">
