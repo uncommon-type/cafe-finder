@@ -8,6 +8,13 @@ import Dialog from "./Dialog";
 
 const Map = ({ data }) => {
   const [viewport, setViewport] = useState(null);
+
+  useEffect(() => {
+    if (data && data.region) {
+      setViewport({ ...data.region.center, zoom: 12 });
+    }
+  }, [data]);
+
   return (
     <section className="map-group flow radius">
       <div className="map-group__inner">
