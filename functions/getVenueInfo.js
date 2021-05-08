@@ -15,8 +15,13 @@ const getVenueInfo = async (id) => {
 exports.handler = async ({ queryStringParameters }) => {
   const { id } = queryStringParameters;
 
-  return {
-    statusCode: 200,
-    body: "",
-  };
+  try {
+    let data = await getVenueInfo(id);
+    return {
+      statusCode: 200,
+      body: JSON.stringify(data),
+    };
+  } catch (error) {
+    console.log(error);
+  }
 };
