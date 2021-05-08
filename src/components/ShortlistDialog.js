@@ -5,6 +5,7 @@ import Card from "./Card";
 import Context from "../Context";
 
 const ShortlistDialog = ({ closeShortlist }) => {
+  const { shortlist } = useContext(Context);
   return (
     <div className="shortlist-dialog">
       <div className="shortlist-dialog__inner">
