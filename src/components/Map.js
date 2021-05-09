@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react";
 
 import ReactMapGL, { NavigationControl, Marker } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import mapboxgl from "mapbox-gl";
-// eslint-disable-next-line import/no-webpack-loader-syntax
-mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
 import PinIcon from "./PinIcon";
 import Dialog from "./Dialog";
