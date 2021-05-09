@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import ReactMapGL, { NavigationControl, Marker } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import mapboxgl from "mapbox-gl";
-mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
 import PinIcon from "./PinIcon";
 import Dialog from "./Dialog";
