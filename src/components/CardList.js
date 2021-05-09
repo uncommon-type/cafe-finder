@@ -2,7 +2,6 @@ import React from "react";
 
 import Pagination from "./Pagination";
 import Card from "./Card";
-import Dialog from "./Dialog";
 
 const CardList = ({ data, handleHover, setOffset }) => {
   return (
@@ -17,7 +16,6 @@ const CardList = ({ data, handleHover, setOffset }) => {
             />
           ))}
         </ul>
-        {/* <Dialog /> */}
         <Pagination
           total={data.total}
           limit={data.limit}
