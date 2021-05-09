@@ -1,13 +1,683 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*--------------------------------------------------------------------------*\
+      RESET 
+\*--------------------------------------------------------------------------*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*--------------------------------------------------------------------------*\
+        GLOBAL
+\*--------------------------------------------------------------------------*/
+
+body {
+  line-height: 1.5;
+  overflow-x: hidden;
+  padding-bottom: 1.77rem;
+  font-weight: 500;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+h2,
+h3 {
+  font-size: 1.77rem;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+:focus {
+  outline: 2px dotted;
+  outline-offset: 0.25rem;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.radius,
+.button {
+  border-radius: 0.5rem;
+}
+
+.bg-primary {
+  background: rgb(247, 246, 242);
+}
+
+.font-base {
+  font-family: "IBM Plex Sans", Helvetica, Arial, sans-serif;
+}
+
+.gap-top-600 {
+  margin-top: 1.77rem;
+}
+
+.gap-top-700 {
+  margin-top: 2.4rem;
+}
+
+@media screen and (min-width: 48em) {
+  .md\:text-600 {
+    font-size: 1.77rem;
+  }
+  .md\:text-700 {
+    font-size: 2.4rem;
+  }
+}
+
+.site-head {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.33rem;
+}
+
+.site-head__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*--------------------------------------------------------------------------*\
+SEARCH WIDGET
+\*--------------------------------------------------------------------------*/
+
+.search-form {
+  font-family: code-saver, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border: 0 solid #002f3c;
+  color: rgba(0, 47, 60, 1);
+}
+
+.search-form__label {
+  opacity: 0;
+}
+
+.search-form__input {
+  width: 100%;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-right: 1rem;
+  padding-left: 2rem;
+  border: 0 solid #002f3c;
+  border-radius: 5px;
+  border-width: 2px;
+  box-shadow: 1px 1px 0 #002f3c;
+  background-color: rgba(239, 254, 255, 1);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.search-form__button {
+  padding: 10px 25px;
+  border: none;
+  background: transparent;
+}
+
+.site-head__title {
+  margin: 0;
+  font-family: Space Mono, monospace;
+  font-size: 1.875rem;
+  font-style: italic;
+  line-height: 1.2;
+  color: rgba(25, 26, 27, 1);
+}
+
+/*--------------------------------------------------------------------------*\
+     NAV
+\*--------------------------------------------------------------------------*/
+
+@media screen and (min-width: 48em) {
+  .app {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.33rem;
+  }
+}
+
+.app__nav {
+  align-items: flex-end;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.33rem;
+  padding: 0;
+  padding: 0 2.33rem;
+}
+
+@media screen and (min-width: 48em) {
+  .app__nav {
+    padding: 0;
+  }
+}
+
+.app__nav > :last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.app__nav > :last-child > * {
+  flex-shrink: 0;
+  margin: 0.2rem 0 0 0.2rem;
+}
+
+@media (min-width: 48em) {
+  .app__nav > :last-child {
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 48em) {
+  .splitter {
+    display: flex;
+  }
+}
+
+@media (min-width: 48em) {
+  .splitter > * {
+    flex-grow: 1;
+  }
+}
+
+.splitter > :last-child {
+  margin-top: 1.33rem;
+}
+
+@media (min-width: 48em) {
+  .splitter > :last-child {
+    margin-top: 0;
+    min-width: 42rem;
+  }
+}
+
+.app__nav__sort-btn {
+  margin: 0.2rem 0 0 0.2rem;
+  font-family: Inter var, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: rgb(33, 33, 33);
+  cursor: pointer;
+}
+
+.shortlist-button,
+.share-button {
+  border: 0 solid #002f3c;
+  border-width: 2px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 0 #002f3c;
+  font-family: code-saver, sans-serif;
+  font-size: 0.875rem;
+  background-color: rgba(239, 254, 255, 1);
+  cursor: pointer;
+}
+
+.share-button {
+  background-color: white;
+}
+
+/*--------------------------------------------------------------------------*\
+      CARD LIST
+\*--------------------------------------------------------------------------*/
+
+.card-group {
+  line-height: 1.1;
+}
+
+#card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+  list-style: none;
+  margin: 0px;
+  padding: 10px;
+  background: rgb(247, 246, 242);
+}
+
+@media screen and (min-width: 48em) {
+  #card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  border-radius: 0.25rem;
+  border: 1px solid #002f3c;
+  border-width: 1px;
+  border-radius: 0.25rem;
+  box-shadow: 3px 3px 0 #b8fff3;
+  background-color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 1px 1px 0px #002f3c;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 0 auto;
+  padding: 1rem;
+}
+
+.card__body h2 {
+  font-family: code-saver, monospace;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: rgb(33, 33, 33);
+}
+
+.card__body p {
+  font-family: code-saver, monospace;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(25, 26, 27, 1);
+}
+
+.card__body > :last-child {
+  padding-top: 0.75rem;
+}
+
+.card a {
+  text-decoration: none;
+}
+
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px;
+  color: rgba(25, 26, 27, 1);
+}
+
+small {
+  font-family: code-saver, monospace;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.heart__button,
+.heart__button.selected {
+  border: none;
+  background: none;
+  border-radius: 100%;
+  padding: 10px;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.heart__button-active {
+  box-shadow: rgb(255 184 28) 0px 0px 0px 3px;
+}
+
+.heart__button:focus {
+  outline: none;
+  box-shadow: rgb(255 184 28) 0px 0px 0px 3px;
+  cursor: pointer;
+}
+
+.heart__button.selected {
+  outline: none;
+  box-shadow: rgb(255 184 28) 0px 0px 0px 3px;
+  background: rgb(245, 241, 224);
+}
+
+/*--------------------------------------------------------------------------*\
+      PAGINATION
+\*--------------------------------------------------------------------------*/
+
+.card-group__pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-next,
+.btn-prev {
+  height: 2rem;
+  margin-left: 0.6rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #002f3c;
+  box-shadow: 0 3px 1px #faf77d;
+  font-family: code-saver, monospace;
+  line-height: 1.5;
+  cursor: pointer;
+  color: rgba(25, 26, 27, 1);
+  background-color: rgba(250, 247, 125, 1);
+}
+
+.btn-next {
+  padding: 0.25rem 1.7rem;
+}
+
+.btn-prev {
+  padding: 0.25rem 0.5rem;
+}
+
+/*--------------------------------------------------------------------------*\
+     MAP
+\*--------------------------------------------------------------------------*/
+
+.map-group {
+  overflow-x: auto;
+  background: rgb(247, 246, 242);
+}
+
+.map-group__inner {
+  width: 100%;
+  min-width: 30rem;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-container {
+  position: absolute;
+  z-index: 0;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  border-width: 0px;
+  margin: 0px;
+}
+
+.mapboxgl-canvas {
+  left: 0;
+}
+.mapboxgl-marker {
+  cursor: pointer !important;
+}
+/*--------------------------------------------------------------------------*\
+     SHORTLIST  DIALOG
+\*--------------------------------------------------------------------------*/
+
+.shortlist-dialog {
+  position: fixed;
+  z-index: 9999999;
+  inset: 0px;
+  overflow: auto;
+  margin: 0;
+  cursor: default;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.shortlist-dialog__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  min-height: auto;
+  margin: 10vh auto;
+  padding: 20px;
+  border: 1px solid #002f3c;
+  border-width: 1px;
+  border-radius: 0.25rem;
+  box-shadow: 3px 3px 0 #b8fff3;
+  line-height: 1.4;
+  background: white;
+  outline: none;
+  color: rgb(33, 33, 33);
+}
+
+.shortlist-dialog__button {
+  position: absolute;
+  top: 28px;
+  right: 12px;
+  display: block;
+  z-index: 99999;
+  padding: 0px 30px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.shortlist-dialog__list > * + * {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.shortlist-dialog__inner__msg {
+  padding: 40px;
+  font-family: Space Mono, monospace;
+  font-size: 1.25rem;
+
+  text-align: center;
+}
+
+.dialog__header {
+  padding: 45px;
+}
+
+.dialog__header h1 {
+  margin-bottom: 10px;
+  font-family: Space Mono, monospace;
+  font-size: 1.875rem;
+  font-weight: inherit;
+  color: rgba(25, 26, 27, 1);
+}
+
+.dialog__header__strong {
+  padding: 0px 5px;
+  font-family: Space Mono, monospace;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  background-color: rgba(239, 254, 255, 1);
+
+  background-color: rgb(255, 38, 158, 0.2);
+}
+
+.dialog__img {
+  display: block;
+  position: relative;
+  padding: 30px;
+  min-height: 250px;
+}
+
+.dialog__img__inner {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.img-container:after,
+.img-container:before {
+  display: block;
+  --duotone-opacity: 1;
+  top: 0;
+  left: 0;
+  opacity: var(--duotone-opacity);
+}
+
+.img-container:before {
+  --color-paleblue: rgb(255, 38, 158, 0.4);
+  --color-paleblue: rgb(255, 38, 158, 0.2);
+  background: var(--color-paleblue);
+  mix-blend-mode: multiply;
+}
+
+.img-container img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: 0.25rem;
+}
+
+.img-container:after,
+.img-container:before {
+  position: absolute;
+  z-index: 1;
+  content: "";
+  width: 100%;
+  height: 100%;
+}
+
+.img-container:after,
+.img-container:before {
+  --duotone-opacity: 1;
+  top: 0;
+  left: 0;
+  display: block;
+  opacity: var(--duotone-opacity);
+}
+
+.img-container img {
+  filter: grayscale(1);
+}
+.img-caption {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 2.3rem;
+  padding: 0.8rem;
+  background: white;
+}
+
+.img-caption__where {
+  display: block;
+  font-family: Space Mono, monospace;
+  font-weight: 900;
+  line-height: 1.3;
+  font-size: 2rem!;
+}
+
+.img-caption__location {
+  font-family: Literata, Georgia, serif;
+  font-size: 1.33rem;
+}
+
+@media screen and (min-width: 48em) {
+  .dialog__body {
+    padding: 45px;
+  }
+}
+
+.visit-btn {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  border: 0 solid #002f3c;
+  border-radius: 0.25rem;
+  border-width: 2px;
+  box-shadow: 3px 3px 0 #002f3c;
+  font-family: code-saver, monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: rgba(0, 47, 60, v1);
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  margin-top: 45px;
+}
+
+.container > * {
+  flex-grow: 1;
+}
+
+.container__content h3 {
+  margin-bottom: 5px;
+  font-family: code-saver, monospace;
+  font-size: 1.125rem;
+  line-height: 1.25;
+  word-wrap: break-word;
+}
+
+.container__content p {
+  font-family: code-saver, monospace;
+  font-size: 1.125rem;
+  line-height: 1.25;
+  word-wrap: break-word;
 }
