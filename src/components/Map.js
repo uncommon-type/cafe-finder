@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 
-import ReactMapGL, { NavigationControl, Marker } from "react-map-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
-import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker";
-// Load worker code separately with worker-loader
-mapboxgl.workerClass = MapboxWorker;
-
 import PinIcon from "./PinIcon";
 import Dialog from "./Dialog";
+import ReactMapGL, { NavigationControl, Marker } from "react-map-gl";
+
+import "mapbox-gl/dist/mapbox-gl.css";
+import mapboxgl from "mapbox-gl";
+
+// @ts-ignore
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
 const Map = ({ data, pinToHover }) => {
   const [viewport, setViewport] = useState(null);
