@@ -2,7 +2,6 @@
 
 App for coffee lovers to find best coffee places
 
-
 <img src="https://github.com/uncommon-type/cafe-finder/assets/74302233/c86cb3ef-7ad9-42b0-abb7-c7c15a71b913" width="660">
 <br/>
 <br/>
@@ -18,12 +17,10 @@ App for coffee lovers to find best coffee places
 <img src="https://github.com/uncommon-type/cafe-finder/assets/74302233/dc1d1207-0544-4eaf-b6d0-078876698b21" width="660">
 <br/>
 
-
-
 ## Built With 
 
 -  React
--  HTML/CSS
+-  CSS
 -  Yelp API
 -  Mapbox API
 -  Netlify serverless functions
